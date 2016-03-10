@@ -6,6 +6,39 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Help View Controller-->
+        <scene sceneID="AXF-rX-z81">
+            <objects>
+                <viewController id="02H-ZY-UuG" customClass="helpViewController" customModule="myPhotos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cVu-dy-2Xi"/>
+                        <viewControllerLayoutGuide type="bottom" id="uIy-Jo-u4B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GRN-F5-CdM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23n-ZN-Ee5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="23n-ZN-Ee5" firstAttribute="leading" secondItem="GRN-F5-CdM" secondAttribute="leadingMargin" constant="-20" id="9of-bq-J0M"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="23n-ZN-Ee5" secondAttribute="trailing" constant="-20" id="aWz-lM-7Mf"/>
+                            <constraint firstItem="uIy-Jo-u4B" firstAttribute="top" secondItem="23n-ZN-Ee5" secondAttribute="bottom" id="mb1-ZD-e7X"/>
+                            <constraint firstItem="23n-ZN-Ee5" firstAttribute="top" secondItem="GRN-F5-CdM" secondAttribute="topMargin" id="nV3-Eg-AGN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myWebView" destination="23n-ZN-Ee5" id="CkX-L8-pkr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PzQ-zh-yB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="-340"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -31,6 +64,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="z0t-7T-Qq6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="a3C-lM-DAt">
+                            <connections>
+                                <segue destination="02H-ZY-UuG" kind="presentation" id="qcu-KR-u2L"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fKn-Dv-BWz">
                             <connections>
                                 <action selector="addImageOnTap:" destination="BYZ-38-t0r" id="G8u-hl-7Uc"/>
